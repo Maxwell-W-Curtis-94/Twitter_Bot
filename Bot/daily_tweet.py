@@ -2,19 +2,14 @@ import logging
 import time
 import random
 
+SECONDS = 86400
+
 
 def daily_tweet(api):
-    seconds = 5
-    print(seconds)
-    last_tweet_time = time.time()
     while True:
-        current_time = time.time()
-        elapsed_time = current_time - last_tweet_time
-        if elapsed_time > seconds:
-            seconds = 86400
-            last_tweet_time = time.time()
-            tweet = get_tweet()
-            api.update_status(tweet)
+        tweet = get_tweet()
+        api.update_status(tweet)
+        time.sleep(SECONDS)
 
 
 # replace with database connection
