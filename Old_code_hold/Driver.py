@@ -9,6 +9,11 @@ class Diver:
     # 86400
 
     def __init__(self, api):
+        """
+        this is a block comment
+        :param api explain what it is
+        :return nothing
+        """
         self.index = 0
         self.start_bot(api=api)
         self.scheduler = sched.scheduler(time.time, time.sleep)
